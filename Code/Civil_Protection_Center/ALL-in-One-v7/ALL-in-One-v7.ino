@@ -234,7 +234,7 @@ void BuzzerSetup(){
   pinMode(buzzer, OUTPUT);
  //digitalWrite(buzzer, HIGH);
  //analogWrite(buzzer,0);
-  tone(buzzer, 1,1); // Send 1KHz sound signal...
+  tone(buzzer, 1000,10); // Send 1KHz sound signal...
    noTone(buzzer);
  // noTone(buzzer);
 }
@@ -331,6 +331,7 @@ if(sensorValue > Threshold)
     digitalWrite(RelayPin3, HIGH);
       LCDGAS();
    // Serial.print(" | Smoke detected!");
+   
   }
 
 }
@@ -355,6 +356,7 @@ if(sensorValue > Threshold)
   lcd.print("");
   lcd.setCursor(3,3);   //Move cursor to character 2 on line 1
   lcd.print("");
+
      // lcd.setCursor(0,3);   //Move cursor to character 2 on line 1
   //lcd.print("");
  }
@@ -379,7 +381,7 @@ if(sensorValue > Threshold)
   lcd.init();
  // lcd.clear();         
   //lcd.backlight();      // Make sure backlight is on
-  
+  tone(buzzer, 1000, 500);
   // Print a message on both lines of the LCD.
   lcd.setCursor(1,0);   //Set cursor to character 2 on line 0
   lcd.print("--- Attetion ---");
